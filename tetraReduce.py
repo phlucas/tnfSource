@@ -33,8 +33,7 @@ import fileinput
 
 def main():
     if len(sys.argv) != 1:
-        sys.exit('Simple TetraReduce. Usage: python '
-                 + sys.argv[0])
+        sys.exit('Simple TetraReduce. Usage: python ' + sys.argv[0])
 
     # read values and accumulate them for "print_result"
     current_seq = None
@@ -42,7 +41,7 @@ def main():
     count = 0
 
     for line in sys.stdin:
-    #for line in fileinput.input():
+        #for line in fileinput.input():
         line = line.strip()
         seqtetra, incount = line.split('\t')
         seq, tetra = seqtetra.split('|')
@@ -59,7 +58,7 @@ def main():
                 current_tetra = tetra
 
     if current_seq == seq:
-	print(current_seq + '|' + current_tetra + '\t' + str(count))
+        print(current_seq + '|' + current_tetra + '\t' + str(count))
 
 if __name__ == '__main__':
     main()
